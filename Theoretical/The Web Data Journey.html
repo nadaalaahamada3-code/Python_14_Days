@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>رحلة الطلب على الويب</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--surface:#f4f5f7;--ink:#1c2230;--muted:#5b6475;--line:#c9cfd9;--accent:#185FA5;
+--tf:#E1F5EE;--ts:#0F6E56;--tt:#085041;--cf:#FAECE7;--cs:#993C1D;--ct:#712B13;--gf:#F1EFE8;--gs:#5F5E5A;--gt:#444441;--pf:#EEEDFE;--ps:#534AB7;
+color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171d;--surface:#1d222b;--ink:#e8eaf0;--muted:#a0a8b8;--line:#3a4250;--accent:#85B7EB;
+--tf:#085041;--ts:#5DCAA5;--tt:#E1F5EE;--cf:#712B13;--cs:#F0997B;--ct:#FAECE7;--gf:#444441;--gs:#B4B2A9;--gt:#F1EFE8;--pf:#3C3489;--ps:#AFA9EC;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14171d;--surface:#1d222b;--ink:#e8eaf0;--muted:#a0a8b8;--line:#3a4250;--accent:#85B7EB;
+--tf:#085041;--ts:#5DCAA5;--tt:#E1F5EE;--cf:#712B13;--cs:#F0997B;--ct:#FAECE7;--gf:#444441;--gs:#B4B2A9;--gt:#F1EFE8;--pf:#3C3489;--ps:#AFA9EC;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Cairo","Segoe UI","Noto Sans Arabic",Tahoma,sans-serif;line-height:1.7}
+main{max-width:780px;margin:0 auto;padding:20px 16px 32px}
+h1{font-size:22px;font-weight:600;margin:0 0 2px}
+.sub{color:var(--muted);font-size:15px;margin:0 0 12px}
+svg{display:block;width:100%;height:auto}
+svg text{font-family:inherit}
+.th{font-size:14px;font-weight:600;fill:var(--ink)}
+.ts{font-size:12px;fill:var(--muted)}
+.box{fill:var(--surface);stroke:var(--line);stroke-width:.5}
+.teal rect{fill:var(--tf);stroke:var(--ts);stroke-width:.5}.teal .th{fill:var(--tt)}.teal .ts{fill:var(--ts)}
+.coral rect{fill:var(--cf);stroke:var(--cs);stroke-width:.5}.coral .th{fill:var(--ct)}.coral .ts{fill:var(--cs)}
+.gray rect{fill:var(--gf);stroke:var(--gs);stroke-width:.5}.gray .th{fill:var(--gt)}.gray .ts{fill:var(--gs)}
+.purple ellipse{fill:var(--pf);stroke:var(--ps);stroke-width:.5}
+.purple rect{fill:var(--pf);stroke:none}
+.hl{fill:none;stroke:#EF9F27;stroke-width:2.5;opacity:0;transition:opacity .3s}
+#cap{min-height:96px;margin-top:8px}
+#cap-t{font-size:18px;font-weight:600}
+#cap-d{color:var(--muted);font-size:15px;margin-top:2px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+button{font:inherit;font-size:15px;padding:8px 16px;min-height:40px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);cursor:pointer}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#dots{display:flex;gap:4px}
+#dots button{width:28px;height:28px;min-height:0;padding:0;border:0;background:transparent;display:grid;place-items:center}
+#dots button::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--line)}
+#dots button[aria-current="true"]::after{background:var(--accent)}
+.key{display:flex;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:14px;margin-top:14px}
+.key i{display:inline-block;width:14px;height:10px;border-radius:2px;margin-inline-end:6px;vertical-align:middle}
+</style>
+</head>
+<body>
+<main>
+<h1>رحلة الطلب على الويب</h1>
+<p class="sub">من لحظة ما تكتب الرابط لحد ما الصفحة تظهر قدامك.</p>
+<svg viewBox="0 0 680 340" role="img" aria-label="رسم متحرك لظرف يتنقل بين المتصفح وDNS والسيرفر وقاعدة البيانات">
+<rect x="30" y="100" width="170" height="150" rx="10" class="box"/>
+<line x1="30" y1="128" x2="200" y2="128" stroke="var(--line)" stroke-width=".5"/>
+<circle cx="46" cy="114" r="3" fill="var(--muted)"/><circle cx="58" cy="114" r="3" fill="var(--muted)"/><circle cx="70" cy="114" r="3" fill="var(--muted)"/>
+<rect x="84" y="106" width="104" height="16" rx="8" fill="var(--bg)" stroke="var(--line)" stroke-width=".5"/>
+<text class="ts" x="136" y="114" text-anchor="middle" dominant-baseline="central">example.com</text>
+<rect x="46" y="148" width="100" height="8" rx="4" fill="var(--line)" opacity=".6"/>
+<rect x="46" y="166" width="70" height="8" rx="4" fill="var(--line)" opacity=".6"/>
+<g id="page" opacity="0" style="transition:opacity .6s">
+<rect x="44" y="138" width="142" height="22" rx="4" fill="#9FE1CB"/>
+<rect x="44" y="168" width="142" height="40" rx="4" fill="#CECBF6"/>
+<rect x="44" y="218" width="110" height="6" rx="3" fill="#B4B2A9"/>
+<rect x="44" y="230" width="80" height="6" rx="3" fill="#B4B2A9"/>
+</g>
+<rect id="h-b" class="hl" x="26" y="96" width="178" height="158" rx="12"/>
+<g class="gray"><rect x="235" y="30" width="100" height="46" rx="8"/><text class="th" x="285" y="48" text-anchor="middle" dominant-baseline="central">DNS</text><text class="ts" x="285" y="64" text-anchor="middle" dominant-baseline="central">دليل الأسماء</text></g>
+<rect id="h-d" class="hl" x="231" y="26" width="108" height="54" rx="10"/>
+<g class="coral"><rect x="380" y="100" width="110" height="34" rx="6"/><rect x="380" y="140" width="110" height="34" rx="6"/><rect x="380" y="180" width="110" height="34" rx="6"/></g>
+<circle cx="396" cy="117" r="3" fill="#EF9F27"/><circle cx="396" cy="157" r="3" fill="#EF9F27"/><circle cx="396" cy="197" r="3" fill="#EF9F27"/>
+<text class="th" x="435" y="236" text-anchor="middle">السيرفر</text>
+<rect id="h-s" class="hl" x="374" y="94" width="122" height="126" rx="12"/>
+<g class="purple"><rect x="596" y="150" width="48" height="56"/><ellipse cx="620" cy="206" rx="24" ry="8"/><ellipse cx="620" cy="150" rx="24" ry="8"/></g>
+<line x1="596" y1="150" x2="596" y2="206" stroke="var(--ps)" stroke-width=".5"/><line x1="644" y1="150" x2="644" y2="206" stroke="var(--ps)" stroke-width=".5"/>
+<text class="th" x="620" y="236" text-anchor="middle">قاعدة البيانات</text>
+<rect id="h-db" class="hl" x="588" y="134" width="64" height="84" rx="14"/>
+<g class="teal"><rect x="30" y="290" width="170" height="26" rx="6"/><text class="th" x="115" y="303" text-anchor="middle" dominant-baseline="central">الفرونت إند</text></g>
+<g class="coral"><rect x="380" y="290" width="264" height="26" rx="6"/><text class="th" x="512" y="303" text-anchor="middle" dominant-baseline="central">الباك إند</text></g>
+<g id="pk" opacity="0" transform="translate(215 185)">
+<rect id="pk-r" x="-15" y="-10" width="30" height="20" rx="3" fill="#FAC775" stroke="#BA7517"/>
+<path id="pk-f" d="M-15 -10L0 2L15 -10" fill="none" stroke="#BA7517"/>
+<text id="pk-t" class="ts" y="-18" text-anchor="middle"></text>
+</g>
+</svg>
+<div id="cap" aria-live="polite"><div id="cap-t"></div><div id="cap-d"></div></div>
+<div class="bar">
+<button id="prev" type="button">السابق</button>
+<div id="dots"></div>
+<button id="play" type="button">إيقاف</button>
+<button id="next" type="button">التالي</button>
+</div>
+<div class="key"><span><i style="background:#FAC775"></i>طلب (request)</span><span><i style="background:#9FE1CB"></i>رد (response)</span><span><i style="background:#EF9F27"></i>الطرف اللي شغال دلوقتي</span></div>
+</main>
+<script>
+(function(){
+var P={b:[215,185],d:[285,112],s:[358,185],s2:[510,185],db:[580,185]};
+var steps=[
+{t:"١. تكتب الرابط",d:"بتكتب example.com في شريط العنوان وتدوس Enter.",act:["h-b"]},
+{t:"٢. المتصفح يسأل الـ DNS",d:"المتصفح مش عارف مكان الموقع، فبيسأل: عنوان example.com إيه؟",f:"b",to:"d",l:"؟",k:0,act:["h-b","h-d"]},
+{t:"٣. الـ DNS يرد بالـ IP",d:"الـ DNS زي دليل التليفونات، بيرجّع عنوان السيرفر على شكل رقم IP.",f:"d",to:"b",l:"IP",k:1,act:["h-d","h-b"]},
+{t:"٤. المتصفح يبعت الطلب",d:"بيبعت طلب HTTP GET للسيرفر: عايز الصفحة الرئيسية.",f:"b",to:"s",l:"GET",k:0,act:["h-b","h-s"]},
+{t:"٥. السيرفر يسأل قاعدة البيانات",d:"كود الباك إند بيطلب من قاعدة البيانات اللي محتاجه للصفحة.",f:"s2",to:"db",l:"استعلام",k:0,act:["h-s","h-db"]},
+{t:"٦. قاعدة البيانات ترد",d:"البيانات بترجع للسيرفر، وهو يجهّز منها الصفحة.",f:"db",to:"s2",l:"بيانات",k:1,act:["h-db","h-s"]},
+{t:"٧. السيرفر يبعت الرد",d:"بيبعت HTML وCSS وJS للمتصفح في response واحد.",f:"s",to:"b",l:"HTML",k:1,act:["h-s","h-b"]},
+{t:"٨. المتصفح يرسم الصفحة",d:"المتصفح بيحوّل الملفات دي للصفحة اللي بتشوفها. وده شغل الفرونت إند.",page:1,act:["h-b"]}
+];
+var ids=["h-b","h-d","h-s","h-db"],cur=0,token=0,timer=null,dotEls=[];
+var $=function(i){return document.getElementById(i)};
+var pk=$("pk"),dots=$("dots");
+function setPos(x,y){pk.setAttribute("transform","translate("+x+" "+y+")")}
+function tween(a,b,ms){
+var my=++token,t0=null;
+function f(ts){
+if(my!==token)return;
+if(t0===null)t0=ts;
+var p=Math.min(1,(ts-t0)/ms),e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+setPos(a[0]+(b[0]-a[0])*e,a[1]+(b[1]-a[1])*e);
+if(p<1)requestAnimationFrame(f);
+}
+requestAnimationFrame(f);
+}
+function go(i){
+cur=i;var s=steps[i];
+$("cap-t").textContent=s.t;$("cap-d").textContent=s.d;
+ids.forEach(function(id){$(id).style.opacity=s.act.indexOf(id)>-1?1:0});
+$("page").setAttribute("opacity",s.page?"1":"0");
+if(s.f){
+token++;setPos(P[s.f][0],P[s.f][1]);
+$("pk-t").textContent=s.l;
+var c1=s.k?"#9FE1CB":"#FAC775",c2=s.k?"#0F6E56":"#BA7517";
+$("pk-r").setAttribute("fill",c1);$("pk-r").setAttribute("stroke",c2);$("pk-f").setAttribute("stroke",c2);
+pk.setAttribute("opacity","1");
+tween(P[s.f],P[s.to],1100);
+}else{token++;pk.setAttribute("opacity","0")}
+dotEls.forEach(function(d,j){if(j===i)d.setAttribute("aria-current","true");else d.removeAttribute("aria-current")});
+$("next").textContent=i===steps.length-1?"من الأول":"التالي";
+}
+function step(d){go((cur+d+steps.length)%steps.length)}
+function stop(){if(timer){clearInterval(timer);timer=null}$("play").textContent="تشغيل تلقائي"}
+function start(){stop();timer=setInterval(function(){step(1)},4000);$("play").textContent="إيقاف"}
+steps.forEach(function(s,i){
+var e=document.createElement("button");e.type="button";e.setAttribute("aria-label","الخطوة "+(i+1));
+e.addEventListener("click",function(){stop();go(i)});
+dots.appendChild(e);dotEls.push(e);
+});
+$("prev").addEventListener("click",function(){stop();step(-1)});
+$("next").addEventListener("click",function(){stop();step(1)});
+$("play").addEventListener("click",function(){timer?stop():start()});
+go(0);
+if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)stop();else start();
+})();
+</script>
+</body>
+</html>
